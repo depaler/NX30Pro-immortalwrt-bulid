@@ -136,7 +136,7 @@ jobs:
         cat >> .config <<EOF
         CONFIG_TARGET_mediatek=y
         CONFIG_TARGET_mediatek_mt7981=y
-        CONFIG_TARGET_mediatek_mt7981_DEVICE_h3c_nx30pro=y
+        CONFIG_TARGET_mediatek_mt7981_DEVICE_h3c_nx30pro-112M=y
         EOF
 
         # IPv6支持:
