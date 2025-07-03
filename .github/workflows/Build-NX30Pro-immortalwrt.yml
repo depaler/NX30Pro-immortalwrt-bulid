@@ -22,8 +22,8 @@ on:
     types: [started]
     
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
-  REPO_BRANCH: 2410
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
+  REPO_BRANCH: openwrt-24.10-6.6
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -136,16 +136,16 @@ jobs:
 
         # 编译NX30Pro固件:
         cat >> .config <<EOF
-        # CONFIG_TARGET_mediatek=y
-        # CONFIG_TARGET_mediatek_mt7981=y
-        # CONFIG_TARGET_mediatek_mt7981_DEVICE_h3c_nx30pro=y
+        CONFIG_TARGET_mediatek=y
+        CONFIG_TARGET_mediatek_mt7981=y
+        CONFIG_TARGET_mediatek_mt7981_DEVICE_h3c_nx30pro=y
         EOF
 
         # LuCI插件选择:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-app-alist=y
+        # CONFIG_PACKAGE_luci-app-alist=y
         CONFIG_PACKAGE_luci-app-adguardhome=y
-        CONFIG_PACKAGE_luci-app-passwall=y
+        # CONFIG_PACKAGE_luci-app-passwall=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
         # CONFIG_PACKAGE_luci-app-nlbwmon=y
